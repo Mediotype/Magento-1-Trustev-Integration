@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default translate="label">
+        <reference name="head">
+            <block type="core/template" name="trustev.js" as="trustev.js" template="mediotype/trustev/trustevjs.phtml" after="-"/>
+        </reference>
+    </default>
+    <checkout_onepage_index>
+        <reference name="before_body_end">
+            <block type="core/template" name="trustev.footer" as="trustev.footer" template="mediotype/trustev/trustevfooter.phtml" after="-"/>
+        </reference>
+    </checkout_onepage_index>
+</layout>

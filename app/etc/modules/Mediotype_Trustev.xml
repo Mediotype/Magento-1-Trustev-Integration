@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mediotype_Trustev>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Mediotype_Trustev>
+        <depends>
+            <Mediotype_Core />
+        </depends>
+    </modules>
+</config>

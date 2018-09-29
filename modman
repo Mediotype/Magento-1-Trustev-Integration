@@ -1,0 +1,6 @@
+app/code/community/Mediotype/Trustev app/code/community/Mediotype/Trustev
+app/design/adminhtml/default/default/layout/mediotype/trustev app/design/adminhtml/default/default/layout/mediotype/trustev
+app/design/adminhtml/default/default/template/mediotype/trustev app/design/adminhtml/default/default/template/mediotype/trustev
+app/design/frontend/base/default/layout/mediotype/trustev app/design/frontend/base/default/layout/mediotype/trustev
+app/design/frontend/base/default/template/mediotype/trustev app/design/frontend/base/default/template/mediotype/trustev
+app/etc/modules/Mediotype_Trustev.xml app/etc/modules/Mediotype_Trustev.xml

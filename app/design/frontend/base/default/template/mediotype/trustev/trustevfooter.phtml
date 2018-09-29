@@ -1,0 +1,28 @@
+<?php
+/**
+ * get public key for trustev
+ */
+$trustevHelper = Mage::helper('mediotype_trustev');
+$publicKey = $trustevHelper->getPublicKey();
+?>
+<?php if($trustevHelper->getEnabled() && $publicKey): ?>
+    <script type="text/javascript">
+        //<![CDATA[
+
+        var sessionInterval = setInterval( "saveSessionId()", 5000 );  // run
+
+        function saveSessionId()
+        {
+            //check if variable exists
+            if (typeof TrustevV2 !== 'undefined') {
+                new Ajax.Request('<?php echo $this->getUrl('trustev/index/setSessionId', array('_secure'=>true)) ?>', {
+                    method: "get",
+                    parameters: 'trustevV2SessionId=' + TrustevV2.SessionId,
+                    onSuccess: clearInterval(sessionInterval)
+                });
+            }
+        }
+
+        //]]>
+    </script>
+<?php endif; ?>

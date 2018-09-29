@@ -1,0 +1,34 @@
+<?php
+/**
+ * get public key for trustev
+ */
+$trustevHelper = Mage::helper('mediotype_trustev');
+$publicKey = $trustevHelper->getPublicKey();
+?>
+<?php if($trustevHelper->getEnabled() && $publicKey): ?>
+<script type="text/javascript">
+    //<![CDATA[
+    function getTrustevJS() {
+
+        var tv = document.createElement('script'); tv.type = 'text/javascript'; tv.async = true;
+
+        tv.src = 'https://app.trustev.com/api/v2.0/TrustevJS?key=<?php echo $publicKey ?>';
+
+        var s = document.getElementsByTagName('script')[0];
+
+        s.parentNode.insertBefore(tv, s);
+
+    }
+
+    if (window.addEventListener)
+
+        window.addEventListener("load", getTrustevJS, false);
+
+    else if (window.attachEvent)
+
+        window.attachEvent("onload", getTrustevJS);
+
+    else window.onload = getTrustevJS;
+    //]]>
+</script>
+<?php endif; ?>

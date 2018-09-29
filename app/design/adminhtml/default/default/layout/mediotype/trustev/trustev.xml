@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_sales_order_view>
+        <reference name="sales_order_tabs">
+            <action method="addTab">
+                <name>mediotype_trustev_adminhtml_order_view_tab_decision</name>
+                <block>mediotype_trustev/adminhtml_order_view_tab_decision</block>
+            </action>
+        </reference>
+    </adminhtml_sales_order_view>
+</layout>

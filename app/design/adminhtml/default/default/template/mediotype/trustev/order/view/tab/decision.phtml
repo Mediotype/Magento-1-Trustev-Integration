@@ -1,0 +1,42 @@
+<?php
+/**
+ * @var $this Mediotype_Trustev_Block_Adminhtml_Order_View_Tab_Decision
+ */
+
+$trustevCase = $this->getTrustevCase();
+?>
+<h2><?php echo $this->__('Trustev Decision Data') ?></h2>
+<?php if($trustevCase->getId()): ?>
+    <?php if(Mage::helper('mediotype_trustev')->getIsTestMode()): ?>
+        <h3>This module is currently in Test Mode.  Any Trustev decision data should not be used on any Magento Orders</h3>
+    <?php endif; ?>
+    <div class="box">
+        <table class="form-list" cellspacing="0">
+            <tr>
+                <td class="label"><strong><?php echo $this->__('Result') ?></strong></td>
+                <td class="value"><?php echo $trustevCase->getDecisionResult() ?></td>
+            </tr>
+            <tr>
+                <td class="label"><strong><?php echo $this->__('Score') ?></strong></td>
+                <td class="value"><?php echo $trustevCase->getDecisionScore() ?></td>
+            </tr>
+            <tr>
+                <td class="label"><strong><?php echo $this->__('Confidence') ?></strong></td>
+                <td class="value"><?php echo $trustevCase->getDecisionConfidence() ?></td>
+            </tr>
+        </table>
+    </div>
+    <div class="box">
+        <table class="form-list" cellpadding="0">
+            <tr>
+                <td class="label"><?php echo $this->__('Change Order Status') ?></td>
+                <td class="value"><?php echo $this->getOrderStatusOptions() ?></td>
+            </tr>
+        </table>
+    </div>
+<?php else: ?>
+    <div class="box">
+        <h3><?php echo $this->__('This order has no Trustev data') ?></h3>
+        <?php //TODO make button for manual addition ?>
+    </div>
+<?php endif; ?>
